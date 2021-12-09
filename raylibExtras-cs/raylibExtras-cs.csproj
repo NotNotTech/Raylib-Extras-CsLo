@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>raylibExtras_cs</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Raylib-cs" Version="3.7.0.1" />
+    <PackageReference Include="Raylib-CsLo" Version="4.0.0-rc.4.1" />
   </ItemGroup>
 
 </Project>

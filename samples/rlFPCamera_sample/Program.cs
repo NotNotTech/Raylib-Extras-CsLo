@@ -2,7 +2,8 @@
 using System.Numerics;
 
 using raylibExtras;
-using Raylib_cs;
+using Raylib_CsLo;
+using static Raylib_CsLo.Raylib;
 
 namespace rlFPCamera_sample
 {
@@ -16,8 +17,8 @@ namespace rlFPCamera_sample
             Raylib.InitWindow(screenWidth, screenHeight, "raylibExtras [camera] example - First person camera");
             Raylib.SetTargetFPS(144);
 
-            Image img = Raylib.GenImageChecked(256, 256, 32, 32, Color.DARKGRAY, Color.WHITE);
-            Texture2D tx = Raylib.LoadTextureFromImage(img);
+            Image img = Raylib.GenImageChecked(256, 256, 32, 32, DARKGRAY, WHITE);
+            Texture tx = Raylib.LoadTextureFromImage(img);
             Raylib.UnloadImage(img);
             Raylib.SetTextureFilter(tx, TextureFilter.TEXTURE_FILTER_ANISOTROPIC_16X);
             Raylib.SetTextureWrap(tx, TextureWrap.TEXTURE_WRAP_CLAMP);
@@ -34,14 +35,14 @@ namespace rlFPCamera_sample
                 cam.Update();
 
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.SKYBLUE);
+                Raylib.ClearBackground(Raylib.SKYBLUE);
 
                 //Raylib.BeginMode3D(cam.Camera);
 
                 cam.BeginMode3D();
 
                 // grid of cube trees on a plane to make a "world"
-                Raylib.DrawPlane(new Vector3( 0, 0, 0 ), new Vector2( 50, 50 ), Color.BEIGE); // simple world plane
+                Raylib.DrawPlane(new Vector3( 0, 0, 0 ), new Vector2( 50, 50 ), BEIGE); // simple world plane
                 float spacing = 4;
                 int count = 5;
 
@@ -54,8 +55,8 @@ namespace rlFPCamera_sample
                         Vector3 min = new Vector3( x - 0.5f, 0, z - 0.5f );
                         Vector3 max = new Vector3( x + 0.5f, 1, z + 0.5f );
 
-                        Raylib.DrawCubeTexture(tx, new Vector3( x, 1.5f, z ), 1, 1, 1, Color.GREEN);
-                        Raylib.DrawCubeTexture(tx, new Vector3( x, 0.5f, z ), 0.25f, 1, 0.25f, Color.BROWN);
+                        Raylib.DrawCubeTexture(tx, new Vector3( x, 1.5f, z ), 1, 1, 1, GREEN);
+                        Raylib.DrawCubeTexture(tx, new Vector3( x, 0.5f, z ), 0.25f, 1, 0.25f, BROWN);
                     }
                 }
 
