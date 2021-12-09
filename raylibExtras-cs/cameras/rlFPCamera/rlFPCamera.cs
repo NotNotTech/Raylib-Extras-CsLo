@@ -265,44 +265,44 @@ namespace raylibExtras
         // start drawing using the camera, with near/far plane support
         public void BeginMode3D()
         {
-            Raylib.BeginMode3D(Camera);
-			//float aspect = (float)Raylib.GetScreenWidth() / (float)Raylib.GetScreenHeight();
+			//Raylib.BeginMode3D(Camera);
+			float aspect = (float)Raylib.GetScreenWidth() / (float)Raylib.GetScreenHeight();
 
-			//RlGl.rlDrawRenderBatchActive();          // Draw Buffers (Only OpenGL 3+ and ES2)
-			//RlGl.rlMatrixMode(RlGl.RL_PROJECTION);        // Switch to projection matrix
-			//RlGl.rlPushMatrix();                     // Save previous matrix, which contains the settings for the 2d ortho projection
-			//RlGl.rlLoadIdentity();                   // Reset current matrix (projection)
+			RlGl.rlDrawRenderBatchActive();          // Draw Buffers (Only OpenGL 3+ and ES2)
+			RlGl.rlMatrixMode(RlGl.RL_PROJECTION);        // Switch to projection matrix
+			RlGl.rlPushMatrix();                     // Save previous matrix, which contains the settings for the 2d ortho projection
+			RlGl.rlLoadIdentity();                   // Reset current matrix (projection)
 
-			//if (ViewCamera.projection_ == CameraProjection.CAMERA_PERSPECTIVE)
-			//{
-			//	// Setup perspective projection
-			//	double top = RlGl.RL_CULL_DISTANCE_NEAR * System.MathF.Tan(ViewCamera.fovy * 0.5f * (MathF.PI / 180.0f));
-			//	double right = top * aspect;
+			if (ViewCamera.projection_ == CameraProjection.CAMERA_PERSPECTIVE)
+			{
+				// Setup perspective projection
+				double top = RlGl.RL_CULL_DISTANCE_NEAR * System.MathF.Tan(ViewCamera.fovy * 0.5f * (MathF.PI / 180.0f));
+				double right = top * aspect;
 
-			//	RlGl.rlFrustum(-right, right, -top, top, NearPlane, FarPlane);
-			//}
-			//else if (ViewCamera.projection_ == CameraProjection.CAMERA_ORTHOGRAPHIC)
-			//{
-			//	// Setup orthographic projection
-			//	double top = ViewCamera.fovy / 2.0;
-			//	double right = top * aspect;
+				RlGl.rlFrustum(-right, right, -top, top, NearPlane, FarPlane);
+			}
+			else if (ViewCamera.projection_ == CameraProjection.CAMERA_ORTHOGRAPHIC)
+			{
+				// Setup orthographic projection
+				double top = ViewCamera.fovy / 2.0;
+				double right = top * aspect;
 
-			//	RlGl.rlOrtho(-right, right, -top, top, NearPlane, FarPlane);
-			//}
+				RlGl.rlOrtho(-right, right, -top, top, NearPlane, FarPlane);
+			}
 
-			//// NOTE: zNear and zFar values are important when computing depth buffer values
+			// NOTE: zNear and zFar values are important when computing depth buffer values
 
-			//RlGl.rlMatrixMode(RlGl.RL_MODELVIEW);         // Switch back to modelview matrix
-			//RlGl.rlLoadIdentity();                   // Reset current matrix (modelview)
+			RlGl.rlMatrixMode(RlGl.RL_MODELVIEW);         // Switch back to modelview matrix
+			RlGl.rlLoadIdentity();                   // Reset current matrix (modelview)
 
-			//// Setup Camera view
-			//Matrix4x4 matView = RayMath.MatrixLookAt(ViewCamera.position, ViewCamera.target, ViewCamera.up);
+			// Setup Camera view
+			Matrix4x4 matView = RayMath.MatrixLookAt(ViewCamera.position, ViewCamera.target, ViewCamera.up);
 
-			//// TODO, fix this!
-			////float[] mat = rlMathUtils.MatrixToBuffer(matView);
-			//RlGl.rlMultMatrixf(matView);      // Multiply modelview matrix by view matrix (camera)
+			// TODO, fix this!
+			//float[] mat = rlMathUtils.MatrixToBuffer(matView);
+			RlGl.rlMultMatrixf(matView);      // Multiply modelview matrix by view matrix (camera)
 
-			//RlGl.rlEnableDepthTest();                // Enable DEPTH_TEST for 3D
+			RlGl.rlEnableDepthTest();                // Enable DEPTH_TEST for 3D
 		}
 
         // end drawing with the camera
