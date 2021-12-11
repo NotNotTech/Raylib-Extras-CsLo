@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Raylib-CsLo" Version="4.0.0-rc.4.1" />
+    <PackageReference Include="Raylib-CsLo" Version="4.0.0-rc.4.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\raylibExtras-cs\raylibExtras-cs.csproj" />
+    <ProjectReference Include="..\..\raylibExtras-cs\raylibExtras-CsLo.csproj" />
   </ItemGroup>
 
 </Project>

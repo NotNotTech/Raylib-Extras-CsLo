@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31903.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylibExtras-cs", "raylibExtras-cs\raylibExtras-cs.csproj", "{2518B5BD-65DA-451C-AB9D-5D54C3320322}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raylibExtras-CsLo", "raylibExtras-cs\raylibExtras-CsLo.csproj", "{2518B5BD-65DA-451C-AB9D-5D54C3320322}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "rlFPCamera_sample", "samples\rlFPCamera_sample\rlFPCamera_sample.csproj", "{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "samples", "samples\rlFPCamera_sample\samples.csproj", "{9EC52CC4-1F22-47E2-8B0C-C9937F59F587}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
