@@ -1,3 +1,7 @@
+# archived project
+This version of extras works with [Raylib-CSLo](https://github.com/NotNotTech/Raylib-CsLo).  However as Raylib-CSLo is now in an Archived state, so too is this extras project.
+
+
 # extras-cs
 <img align="left" src="https://github.com/raysan5/raylib/raw/master/logo/raylib_logo_animation.gif" width="64">
 Useful comonents for use the [Raylib](https://www.raylib.com/) library (C# language version). 
